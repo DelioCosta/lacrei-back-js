@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 
-const db = require("../database");
+const db = require("../database/data");
 const Profissional = require("./Profissional");
 const Endereco = require("./Endereco");
 

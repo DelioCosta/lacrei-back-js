@@ -1,15 +1,21 @@
 const express = require('express')
-const preCadastroController = require('../controllers/controllerPreCadastro')
-const cadastroController = require('../controllers/controllerCadastro')
-const posCadastroController = require('../controllers/controllerPosCadastro')
+
 const routes = express.Router();
 
+const PreCadastroController = require('../controllers/controllerPreCadastro');
+//const CadastroController = require('../controllers/controllerCadastro')
+//const PosCadastroController = require('../controllers/controllerPosCadastro')
 
-routes.post("/preCadastro", preCadastroController.preCadastro);
-routes.post("/cadastro", cadastroController.cadastro);
+// faz a requisição dos validators
+const authPreCadastroValidator = require("../validators/auth/preCadastro");
+
+routes.post("/precadastro", authPreCadastroValidator, PreCadastroController.preCadastro);
+
+
+/* routes.post("/cadastro", cadastroController.cadastro);
 routes.post("/posCadastro", posCadastroController.posCadastro);
-routes.delete("/cadastro/:id/deletar", cadastroController.deletarCadastro);
-routes.put("/cadastro/:id/atualizar", cadastroController.atualizarCadastro);
-routes.get("/cadastro/lista", cadastroController.listarCadastro);
+routes.delete("/cadastro/:id", cadastroController.deletarCadastro);
+routes.put("/cadastro/:id", cadastroController.atualizarCadastro);
+routes.get("/cadastro/lista", cadastroController.listarCadastro); */
 
 module.exports = routes;

@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 
-const db = require("../database");
+const db = require("../database/data");
 const Profissao = require("./Profissao");
 const Identidade = require("./Identidade");
 
@@ -56,39 +56,39 @@ const Profissional = db.define(
     rqe: {
         type: DataTypes.STRING,
     },
-    alvoL: {
+    alvol: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoG: {
+    alvog: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoB: {
+    alvob: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoT: {
+    alvot: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoQ: {
+    alvoq: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoI: {
+    alvoi: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoA: {
+    alvoa: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoP: {
+    alvop: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    alvoN: {
+    alvon: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },

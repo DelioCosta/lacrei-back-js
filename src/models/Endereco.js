@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 
-const db = require("../database");
+const db = require("../database/data");
 const Consultorio = require("./Consultorio");
 
 const Endereco = db.define(
