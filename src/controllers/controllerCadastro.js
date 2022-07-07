@@ -1,56 +1,67 @@
-const Cadastro = require("../models/Cadastro");
-
-
-
 const CadastroController = {
     async cadastro(req, res) {
-        const { dadosQueSeraoCadastrados3 } = req.body;
+        const { foto, descricao_foto, sobre_mim, foto_carteira, carta_entrada } = req.body;
 
-        const cadastro = await cadastro.create({
-            //colunas do banco de dados
-
+        const cadastro = await Profissional.create({
+            foto, 
+            descricao_foto, 
+            sobre_mim,
+            foto_carteira, 
+            carta_entrada
         });
-
-        res.json(cadastro);
     },
 
-        listarCadastro: async (req, res) => {
-            const listaDeCadastro = await Cadastro.findAll()
-            res.json();
-        },
+    async cadastro(req, res) {
+        const { atende_clinica, atende_online, atende_domicilio, tel_fixo, celular, whatsapp, endereco_id } = req.body;
 
-    async deletarCadastro(req,res) {
-        const { id } = req.params;
-
-        await  Cadastro.destroy({
-            where:{
-                id,
-            }
+        const cadastro = await Consultorio.create({
+             atende_clinica, 
+             atende_online, 
+             atende_domicilio,
+             tel_fixo, 
+             celular, 
+             whatsapp, 
+             endereco_id
         });
-
-        res.json("Cadastro deletado")
+    
+        
     },
 
-    async atualizarCadastro(req, res){
-        const { id } = req.params;
-        const { dadosQueSeraoAtualizados } = req.body;
+    async cadastro(req, res) {
+        const { dia_semana, hora_inicio, hora_fim } = req.body;
 
-        const cadastroAtualizado = await  Cadastro.update({
-            dadosQueSeraoAtualizados
-        },
-        {
-         where: {
-             id,
-        }
-        }
-    );
+        const cadastro = await Horario.create({
+            dia_semana, 
+            hora_inicio,
+            hora_fim
+        });
+        
+    },
 
-    res.json("Cadastro Atualizado")
+    async cadastro(req, res) {
+        const {id, convenio_id, consultorio_id } = req.body;
 
-},
+        const cadastro = await Consultorio_Convenio.create({
+            id,
+            convenio_id,
+            consultorio_id
+        });
+        
+    },
 
+    async cadastro(req, res) {
+        const { } = req.body;
 
-};
+        const cadastro = await Servico.create({
+            nome,
+            duracao,
+            valor,
+            atende_clinica, 
+            atende_online, 
+            atende_domicilio
+        });
 
-
-module.exports = CadastroController;
+        res.status(201).json(Cadastro)
+        
+    },
+}
