@@ -15,7 +15,7 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(authMiddlewares.unless({ path: ["/precadastro"]}));
-//no unless são especificadas as rotas que o middleware irá ignorar, porém no caso da rota de psicologos somente para method post 
+//no unless são especificadas as rotas que o middleware irá ignorar
 
 app.use(routes);
 app.use(handleError);

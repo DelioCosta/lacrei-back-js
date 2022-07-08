@@ -6,7 +6,7 @@ const DB_PASS = "";
 const DB_CONFIG = {
   dialect: "mysql",
   host: "localhost",
-  port: 3000,
+  port: "3306",
 };
 
 let db = {};

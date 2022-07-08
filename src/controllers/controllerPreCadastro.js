@@ -12,9 +12,12 @@ const preCadastroController = {
         
         let lista_espera = 1;
         let conselho_ativo = 0;
+
+
         if(regiao_atuacao == 'SP'){
             lista_espera = 0;
             conselho_ativo = 1;
+            //apenas para fins de testes do envio dos 2 tipos de email foi definida esta regra para setar o conselho_ativo como 1
         }
         
         let alvol = 0;
